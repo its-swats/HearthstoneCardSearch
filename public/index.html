@@ -4,6 +4,7 @@
   <script src='./javascript/jquery-2.1.4.min.js'></script>
   <script src='./javascript/handlebars.min.js'></script>
   <script src='./javascript/underscore-min.js'></script>
+  <script src='./javascript/hearthstone.js'></script>
   <link rel='stylesheet' type='text/css' href='./css/css/bootstrap.css'>
 </head>
 <body>
@@ -18,9 +19,7 @@
           <li role="presentation"><a href="#">Contact</a></li>
         </ul>
       </nav>
-      <h3 class="text-muted">Hearthstone Lookup</h3>
-    </div>
-    <div class='col-sm-2'>
+      <h3 class="text-muted">Hearthstone Card Lookup</h3>
     </div>
   </div>
 
@@ -28,15 +27,29 @@
     <div class='col-sm-2'>
     </div>
     <div class='jumbotron col-sm-8'>
-      <form>
+      <form id='searchForm'>
         <div class='form-group'>
-          <input class='form-control' type='text' placeholder='Card Search'><br>
+          <input class='form-control' type='text' name='searchTerm' placeholder='Card Search'><br>
           <input type='submit' class='btn btn-primary btn-block' value='Search'>
         </div>
       </form>
     </div>
-    <div class='col-sm-2'>
-    </div>
   </div>
+
+  <div class="container">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-6" id='cardResult'>
+
+    </div>
 </body>
 </html>
+
+<script id='displayCard' type='text/x-handlebars-template'>
+  <blockquote>
+    <p><b>{{card.name}}</b> - {{card.cost}} mana</p>
+    <p>{{card.attack}} / {{card.health}}</p>
+    <p>{{{card.text}}}</p>
+    <p><i>{{{card.flavor}}}</i></p>
+  </blockquote>
+</script>

@@ -6,6 +6,7 @@
   <script src='./javascript/underscore-min.js'></script>
   <script src='./javascript/hearthstone.js'></script>
   <link rel='stylesheet' type='text/css' href='./css/css/bootstrap.css'>
+  <link rel='stylesheet' type='text/css' href='/.css/custom.css'>
 </head>
 <body>
   <div class="container">
@@ -49,7 +50,9 @@
   <blockquote>
     <p><b>{{card.name}}</b> - {{card.cost}} mana</p>
     <p>{{card.attack}} / {{card.health}}</p>
-    <p>{{{card.text}}}</p>
+    {{#if card.text}}
+      <p>{{{card.text}}}</p>
+    {{/if}}
     <p><i>{{{card.flavor}}}</i></p>
   </blockquote>
 </script>

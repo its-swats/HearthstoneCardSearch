@@ -33,26 +33,47 @@
           <input type='submit' class='btn btn-primary btn-block' value='Search'>
         </div>
       </form>
-      <form id='advancedSearchForm' class='form-inline'>
-        <div class='form-group row'>
-          <label for='rarity'>Rarity</label>
-          <select class='form-control'>
-            <option selected>All</option>
-            <option value='free'>Basic/Adventure</option>
-            <option value='common'>Common</option>
-            <option value='rare'>Rare</option>
-            <option value='epic'>Epic</option>
-            <option value='legendary'>Legendary</option>
-          </select>
-          <label for='cost'>Cost</label>
-          <input class='form-control' type'text' name'cost'>
+      <form id='advancedSearchForm'>
+        <div class='form-group row col-sm-8'>
+          <div class='form-group col-sm-4'>
+            <label for='rarity'>Rarity</label>
+            <select name='rarity' class='form-control'>
+              <option selected>All</option>
+              <option value='free'>Basic/Adventure</option>
+              <option value='common'>Common</option>
+              <option value='rare'>Rare</option>
+              <option value='epic'>Epic</option>
+              <option value='legendary'>Legendary</option>
+            </select>
+          </div>
+          <div class='form-group col-sm-4'>
+            <label for='type'>Card Type</label>
+            <select name ='type' class='form-control'>
+              <option selected>All</option>
+              <option value='minion'>Minion</option>
+              <option value='spell'>Spell</option>
+              <option value='weapon'>Weapon</option>
+            </select>
+          </div>
+          <div class='form-group col-sm-4'>
+            <label for='mechanic'>Mechanics</label>
+            <input class='form-control' type'text' name='mechanic'>
+          </div>
         </div>
-        <!-- <div class='form-group row'>
-          <label for='attack' class='col-sm-2'>Attack</label>
-          <input class='form-control col-sm-2' type'text' name'attack'>
-          <label for='defense' class='col-sm-2'>Defense</label>
-          <input class='form-control col-sm-2' type='text' name='defense'>
-        </div> -->
+        <div class='form-group row col-sm-8'>
+          <div class='form-group col-sm-4'>
+            <label for='cost'>Cost</label>
+            <input class='form-control' type'text' name='cost'>
+          </div>
+          <div class='form-group col-sm-4'>
+            <label for='health'>Health</label>
+            <input class='form-control' type'text' name='health'>
+          </div>
+          <div class='form-group col-sm-4'>
+            <label for='attack'>Attack</label>
+            <input class='form-control' type'text' name='attack'>
+          </div>
+        </div>
         <input type='submit' class='btn btn-primary btn-block' value='Search'>
       </form>
     </div>

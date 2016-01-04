@@ -10,9 +10,10 @@ var prepEnvironment = function(){
 }
 
 var searchHandler = function(){
-  $('#searchForm').on('submit', function(event){
+  $('form').on('submit', function(event){
     event.preventDefault()
     var search_data = $(this).serialize()
+    debugger;
     var response = $.ajax({
       type: 'GET',
       url: 'http://' + server + '/find_card',

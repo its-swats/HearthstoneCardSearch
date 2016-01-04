@@ -51,7 +51,7 @@
   <blockquote>
     <p><b>{{this.name}}</b> - {{this.cost}} mana</p>
     {{#if this.attack}}
-      <p>{{this.attack}} {{#if this.health}}/ {{this.health}}{{/if}}</p>
+      <p>{{this.attack}} / {{this.health}}{{this.durability}}</p>
     {{/if}}
     {{#if this.text}}
       <p>{{{this.text}}}</p>
@@ -59,4 +59,10 @@
     <p><i>{{{this.flavor}}}</i></p>
   </blockquote>
   {{/each}}
+</script>
+
+<script id='noResults' type='text/x-handlebars-template'>
+  <blockquote>
+    <p>No card found, adjust your search and try again</p>
+  </blockquote>
 </script>

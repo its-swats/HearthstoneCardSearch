@@ -17,15 +17,25 @@ var searchHandler = function(){
       data: search_data
     })
     response.done(function(data){
-      fillTemplate(data);
+      printToScreen(data);
     })
   })
 }
 
-var fillTemplate = function(data) {
-  var template = $('#displayCard').html();
-  var template = Handlebars.compile(template);
-  var context = {'card': data.cards};
-  var compiledHTML = template(context);
-  $('#cardResult').html(compiledHTML);
+var printToScreen = function(data) {
+  if (!!data.cards.length === false) {
+    displayTemplate('noResults')
+  } else {
+    displayTemplate('displayCard', data)
+  }
+}
+
+var displayTemplate = function(type, data) {
+  var template = $('#'+type).html();
+  if (!!data === true) {
+    var template = Handlebars.compile(template);
+    var context = {'card': data.cards};
+    var template = template(context);
+  }
+  $('#cardResult').html(template)
 }

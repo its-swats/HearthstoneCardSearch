@@ -13,7 +13,6 @@ var searchHandler = function(){
   $('form').on('submit', function(event){
     event.preventDefault()
     var search_data = $(this).serialize()
-    debugger;
     var response = $.ajax({
       type: 'GET',
       url: 'http://' + server + '/find_card',

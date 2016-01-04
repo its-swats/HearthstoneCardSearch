@@ -29,11 +29,13 @@
     <div class='jumbotron col-sm-8'>
       <form id='searchForm'>
         <div class='form-group'>
+          <input type='hidden' name='searchType' value='normal'>
           <input class='form-control' type='text' name='searchTerm' placeholder='Card Search'><br>
           <input type='submit' class='btn btn-primary btn-block' value='Search'>
         </div>
       </form>
       <form id='advancedSearchForm'>
+        <input type='hidden' name='searchType' value='advanced'>
         <div class='form-group row col-sm-8'>
           <div class='form-group col-sm-4'>
             <label for='rarity'>Rarity</label>
@@ -92,9 +94,7 @@
   {{#each card}}
   <blockquote>
     <p><b>{{this.name}}</b> - {{this.cost}} mana</p>
-    {{#if this.attack}}
-      <p>{{this.attack}} / {{this.health}}{{this.durability}}</p>
-    {{/if}}
+      <p>{{this.attack}} {{#if this.health}}/ {{this.health}}{{/if}}{{#if this.durability}} / {{this.durability}}</p>{{/if}}
     {{#if this.text}}
       <p>{{{this.text}}}</p>
     {{/if}}

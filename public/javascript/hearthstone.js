@@ -1,9 +1,11 @@
 $(function(){
   prepEnvironment();
   searchHandler();
+  searchMode();
 })
 
 var prepEnvironment = function(){
+  $('#advancedSearchForm').toggle();
   server = 'localhost:3000'
 }
 
@@ -38,4 +40,13 @@ var displayTemplate = function(type, data) {
     var template = template(context);
   }
   $('#cardResult').html(template)
+}
+
+var searchMode = function() {
+  $('#advancedSearch').on('click', function(event){
+    event.preventDefault();
+    $(this).parent().toggleClass('active');
+    $('#searchForm').toggle();
+    $('#advancedSearchForm').toggle();
+  })
 }

@@ -15,9 +15,8 @@
     <div class="header clearfix col-sm-8">
       <nav>
         <ul class="nav nav-pills pull-right">
-          <li role="presentation"><a href="#">Home</a></li>
-          <li role="presentation"><a href="#">About</a></li>
-          <li role="presentation"><a href="#">Contact</a></li>
+          <li role="presentation"><a id='advancedSearch' href="#">Advanced Search</a></li>
+          <li role="presentation"><a id='about' href="#">About</a></li>
         </ul>
       </nav>
       <h3 class="text-muted">Hearthstone Card Lookup</h3>
@@ -33,6 +32,28 @@
           <input class='form-control' type='text' name='searchTerm' placeholder='Card Search'><br>
           <input type='submit' class='btn btn-primary btn-block' value='Search'>
         </div>
+      </form>
+      <form id='advancedSearchForm' class='form-inline'>
+        <div class='form-group row'>
+          <label for='rarity'>Rarity</label>
+          <select class='form-control'>
+            <option selected>All</option>
+            <option value='free'>Basic/Adventure</option>
+            <option value='common'>Common</option>
+            <option value='rare'>Rare</option>
+            <option value='epic'>Epic</option>
+            <option value='legendary'>Legendary</option>
+          </select>
+          <label for='cost'>Cost</label>
+          <input class='form-control' type'text' name'cost'>
+        </div>
+        <!-- <div class='form-group row'>
+          <label for='attack' class='col-sm-2'>Attack</label>
+          <input class='form-control col-sm-2' type'text' name'attack'>
+          <label for='defense' class='col-sm-2'>Defense</label>
+          <input class='form-control col-sm-2' type='text' name='defense'>
+        </div> -->
+        <input type='submit' class='btn btn-primary btn-block' value='Search'>
       </form>
     </div>
   </div>

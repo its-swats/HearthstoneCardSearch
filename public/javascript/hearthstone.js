@@ -17,7 +17,7 @@ var searchHandler = function(){
       data: search_data
     })
     response.done(function(data){
-      fillTemplate(data.item);
+      fillTemplate(data);
     })
   })
 }
@@ -25,7 +25,7 @@ var searchHandler = function(){
 var fillTemplate = function(data) {
   var template = $('#displayCard').html();
   var template = Handlebars.compile(template);
-  var context = {'card': data};
+  var context = {'card': data.cards};
   var compiledHTML = template(context);
   $('#cardResult').html(compiledHTML);
 }

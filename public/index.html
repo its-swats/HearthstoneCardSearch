@@ -6,7 +6,7 @@
   <script src='./javascript/underscore-min.js'></script>
   <script src='./javascript/hearthstone.js'></script>
   <link rel='stylesheet' type='text/css' href='./css/css/bootstrap.css'>
-  <link rel='stylesheet' type='text/css' href='/.css/custom.css'>
+  <link rel='stylesheet' type='text/css' href='./css/custom.css'>
 </head>
 <body>
   <div class="container">
@@ -47,12 +47,16 @@
 </html>
 
 <script id='displayCard' type='text/x-handlebars-template'>
+  {{#each card}}
   <blockquote>
-    <p><b>{{card.name}}</b> - {{card.cost}} mana</p>
-    <p>{{card.attack}} / {{card.health}}</p>
-    {{#if card.text}}
-      <p>{{{card.text}}}</p>
+    <p><b>{{this.name}}</b> - {{this.cost}} mana</p>
+    {{#if this.attack}}
+      <p>{{this.attack}} {{#if this.health}}/ {{this.health}}{{/if}}</p>
     {{/if}}
-    <p><i>{{{card.flavor}}}</i></p>
+    {{#if this.text}}
+      <p>{{{this.text}}}</p>
+    {{/if}}
+    <p><i>{{{this.flavor}}}</i></p>
   </blockquote>
+  {{/each}}
 </script>

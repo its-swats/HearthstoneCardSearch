@@ -4,13 +4,16 @@ class Search
     @cards = JSON.parse(File.read('./public/cards.json'))
     @search_type = params['searchType']
     @results = []
-    @search_term = params['searchTerm']
-    @rarity = params['rarity'].downcase
-    @type = params['type'].downcase
-    @mechanic = params['mechanic'].downcase unless params['mechanic'] = ""
-    @cost = params['cost'].to_i unless params['cost'] == ""
-    @health = params['health'].to_i unless params['health'] == ""
-    @attack = params['attack'].to_i unless params['attack'] == ""
+    if @search_type == 'normal'
+      @search_term = params['searchTerm']
+    elsif @search_type == 'advanced'
+      @rarity = params['rarity'].downcase if params['rarity']
+      @type = params['type'].downcase if params['type']
+      @mechanic = params['mechanic'].downcase unless params['mechanic'] == ""
+      @cost = params['cost'].to_i unless params['cost'] == ""
+      @health = params['health'].to_i unless params['health'] == ""
+      @attack = params['attack'].to_i unless params['attack'] == ""
+    end
   end
 
   def find_card

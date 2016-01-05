@@ -6,3 +6,6 @@ Cards can be searched for by name - if the name is an exact match, that card wil
 
 Advanced Search lets users filter by card attributes, and will only return cards which match all selected attributes. 
 
+A deployed version of the app can be found at:
+http://hearthstone-card-lookup.herokuapp.com
+

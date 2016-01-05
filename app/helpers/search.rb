@@ -9,7 +9,7 @@ class Search
     elsif @search_type == 'advanced'
       @rarity = params['rarity'].downcase if params['rarity']
       @type = params['type'].downcase if params['type']
-      @mechanic = params['mechanic'].downcase unless params['mechanic'] == ""
+      @text = params['text'].downcase unless params['text'] == ""
       @cost = params['cost'].to_i unless params['cost'] == ""
       @health = params['health'].to_i unless params['health'] == ""
       @attack = params['attack'].to_i unless params['attack'] == ""
@@ -30,11 +30,13 @@ class Search
 
   def advanced_search
     @cards.each do |card|
+      p card['text']
       @results << card if (card['attack'] == @attack || @attack == nil) \
                       && (card['health'] == @health || @health == nil) \
                       && (card['cost'] == @cost || @cost == nil) \
                       && (card['rarity'].downcase == @rarity || @rarity == 'all') \
-                      && (card['type'].downcase == @type || @type == 'all' )
+                      && (card['type'].downcase == @type || @type == 'all') \
+                      && (@text == nil || card['text'].downcase.include?(@text) if card['text'])
     end
     @results
   end

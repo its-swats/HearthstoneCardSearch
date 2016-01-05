@@ -1,28 +1,8 @@
-== README
+== Hearthstone Card Lookup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple web app that allows users to look up cards for Blizzard's CCG Hearthstone
 
-Things you may want to cover:
+Cards can be searched for by name - if the name is an exact match, that card will be returned. If it is not an exact match, the search term will be compared against each card in the database to find potential matches. 
 
-* Ruby version
+Advanced Search lets users filter by card attributes, and will only return cards which match all selected attributes. 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
